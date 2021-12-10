@@ -1,0 +1,43 @@
+manifest:
+  defaults:
+    remote: upstream
+
+  remotes:
+    - name: upstream
+      url-base: https://github.com/zephyrproject-rtos
+
+  projects:
+    - name: zephyr
+      path: zephyr
+      revision: 81b1e7fdacf04af8de6cd665fde286258598c39b
+      west-commands: scripts/west-commands.yml
+    - name: cmsis
+      revision: b0612c97c1401feeb4160add6462c3627fe90fc7
+      path: modules/hal/cmsis
+      groups:
+        - hal
+    - name: hal_stm32
+      revision: 6fc9b5f7e0229ef64a882e37213266d346ebfadb
+      path: modules/hal/stm32
+      groups:
+        - hal
+    - name: mcuboot
+      revision: 225b02468bf77806bdd5f503725256cb345970d2
+      path: mcuboot
+    - name: mbedtls
+      revision: 711fd5ea13a5e018cebe1ac1f79c22d897e8b34d
+      path: modules/crypto/mbedtls
+      groups:
+        - crypto
+    - name: tinycrypt
+      path: modules/crypto/tinycrypt
+      revision: 3e9a49d2672ec01435ffbf0d788db6d95ef28de0
+      groups:
+        - crypto
+    - name: segger
+      revision: 3a52ab222133193802d3c3b4d21730b9b1f1d2f6
+      path: modules/debug/segger
+      groups:
+        - debug
+  self:
+    path: ebox
