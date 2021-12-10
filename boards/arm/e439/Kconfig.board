@@ -5,4 +5,4 @@
 
 config BOARD_E439
 	bool "Ebox emulator"
-	depends on SOC_STM32F439XX
+	depends on SOC_STM32F429XX
